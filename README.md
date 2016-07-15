@@ -1,5 +1,8 @@
 # Baffle
 
+![image of baffle][baffle]
+[baffle]: https://res.cloudinary.com/jonathol/image/upload/v1468624429/baffle_xen33v.png
+
 [Live link][project]
 [project]: https://jonathol.github.io/baffle/
 
