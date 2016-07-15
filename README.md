@@ -95,4 +95,6 @@ Display:
 
 ## Future Featrues
 
-In the future, I would like to implement a multiplayer mode and a database to keep track of high scores.
+- multiplayer
+- high score
+- different languages
