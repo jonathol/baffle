@@ -3,7 +3,7 @@
 [Live link][project]
 [project]: https://jonathol.github.io/baffle/
 
-Baffle is a web game inspired by Hasbro's Boggle. It is a simple game made with HTML, CSS, and JS.
+Baffle is a web game inspired by Hasbro's Boggle. It is made with HTML, CSS, and JS.
 
 ## Instructions
 You have 3 minutes to find as many words as you can according to the following rules:
