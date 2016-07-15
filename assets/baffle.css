@@ -113,7 +113,7 @@ body {
 
 .instruction-screen {
   width: 350px;
-  height: 500px;
+  height: 440px;
   background: #606060;
   color: ghostwhite;
   position: fixed;
@@ -132,7 +132,7 @@ body {
 }
 
 .instruction-title{
-  margin: 15px;
+  margin: 20px;
   margin-bottom: 0;
   text-align: center;
 }
@@ -190,7 +190,7 @@ body {
 }
 
 .score-title {
-  margin: 15px;
+  margin: 20px;
   font-size: 30px;
   font-weight: 700;
 }

@@ -8,7 +8,7 @@
   <link href='https://fonts.googleapis.com/css?family=Orbitron:400,500,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="./assets/baffle.css" type="text/css"/>
 
-	<script src="./lib/baffle.js"type="text/javascript"></script>
+	<script src="./lib/bundle.js"type="application/javascript" charset="utf-8"></script>
 
 </head>
 <body>
@@ -21,13 +21,13 @@
 			<div class="menu">
 	   		<h2 class="menu-title">Time Left: </h2>
 	   		<div id="countdownTimer" class="menu-time">-:--</div>
-	   		<button onclick="g.pause()" class="menu-button">
+	   		<button onclick="Game.pause()" class="menu-button">
           Pause
         </button>
-				<button onclick="g.shuffleBaffleGrid()" class="menu-button" >
+				<button onclick="Game.shuffleBaffleGrid()" class="menu-button" >
 					Restart
 				</button>
-				<button onclick="g.rules()" class="menu-button" >
+				<button onclick="Game.rules()" class="menu-button" >
 					Rules
 				</button>
   	  </div>
@@ -39,9 +39,9 @@
 						<ol class="instruction-list-container">
 							<li>Letters must be adjacent (horizontally, vertically, or diagonally)</li>
 							<li>Words must contain at least three letters</li>
-							<li>No letter cube may be used more than once within a single word</li>
+							<li>A letter may be used once per word</li>
 						</ol>
-						<button onclick="g.shuffleBaffleGrid()" class="start" >
+						<button onclick="Game.shuffleBaffleGrid()" class="start" >
 		          Start!
 		        </button>
 					</div>
@@ -53,7 +53,7 @@
 							<li>Words must contain at least three letters</li>
 							<li>No letter cube may be used more than once within a single word</li>
 						</ol>
-						<button onclick="g.rules()" class="start" >
+						<button onclick="Game.rules()" class="start" >
 		          Continue
 		        </button>
 					</div>
@@ -64,14 +64,14 @@
 						<h3 class="score-display">Score: <span id="score">0</span></h3>
 						<span id="endMessage" class="score-message"></span>
 						<br><br>
-						<button onclick="g.playAgain()" class="score-button">
+						<button onclick="Game.playAgain()" class="score-button">
               Play Again!
             </button>
 					</div>
 					<div id="pause_screen" class="pause-screen">
             <h2 class="pause-screen-title">Game Paused!</h2>
 						<h3 class="pause-screen-time">Time Left: <span id="time"></span></h3>
-						<button onclick="g.pause()" class="pause-screen-button">
+						<button onclick="Game.pause()" class="pause-screen-button">
               Unpause
             </button>
 					</div>
@@ -79,151 +79,151 @@
 	   		<div
           id="baffleGrid"
           class="board"
-          onmouseleave="g.clearBoard()"
-          onmouseup="g.submitWord(event)"
+          onmouseleave="Game.clearBoard()"
+          onmouseup="Game.submitWord(event)"
         >
 		   	 	<div
             style="background-color:ghostwhite"
             id="cube1"
             class="dice"
-            onmousedown="g.buildWord(event)"
-            onmousemove="g.buildingWord(event)"
-            onmouseup="g.submitWord(event)"
+            onmousedown="Game.buildWord(event)"
+            onmousemove="Game.buildingWord(event)"
+            onmouseup="Game.submitWord(event)"
           >
           </div>
 		   	 	<div
             style="background-color:ghostwhite"
             id="cube2"
             class="dice"
-            onmousedown="g.buildWord(event)"
-            onmousemove="g.buildingWord(event)"
-            onmouseup="g.submitWord(event)"
+            onmousedown="Game.buildWord(event)"
+            onmousemove="Game.buildingWord(event)"
+            onmouseup="Game.submitWord(event)"
           >
           </div>
 		   	 	<div
             style="background-color:ghostwhite"
             id="cube3"
             class="dice"
-            onmousedown="g.buildWord(event)"
-            onmousemove="g.buildingWord(event)"
-            onmouseup="g.submitWord(event)"
+            onmousedown="Game.buildWord(event)"
+            onmousemove="Game.buildingWord(event)"
+            onmouseup="Game.submitWord(event)"
           >
           </div>
 		   	 	<div
             style="background-color:ghostwhite"
             id="cube4"
             class="dice"
-            onmousedown="g.buildWord(event)"
-            onmousemove="g.buildingWord(event)"
-            onmouseup="g.submitWord(event)"
+            onmousedown="Game.buildWord(event)"
+            onmousemove="Game.buildingWord(event)"
+            onmouseup="Game.submitWord(event)"
           >
           </div>
 		   	 	<div
             style="background-color:ghostwhite"
             id="cube5"
             class="dice"
-            onmousedown="g.buildWord(event)"
-            onmousemove="g.buildingWord(event)"
-            onmouseup="g.submitWord(event)"
+            onmousedown="Game.buildWord(event)"
+            onmousemove="Game.buildingWord(event)"
+            onmouseup="Game.submitWord(event)"
           >
           </div>
 		   	 	<div
             style="background-color:ghostwhite"
             id="cube6"
             class="dice"
-            onmousedown="g.buildWord(event)"
-            onmousemove="g.buildingWord(event)"
-            onmouseup="g.submitWord(event)"
+            onmousedown="Game.buildWord(event)"
+            onmousemove="Game.buildingWord(event)"
+            onmouseup="Game.submitWord(event)"
           >
           </div>
 		   	 	<div
             style="background-color:ghostwhite"
             id="cube7"
             class="dice"
-            onmousedown="g.buildWord(event)"
-            onmousemove="g.buildingWord(event)"
-            onmouseup="g.submitWord(event)"
+            onmousedown="Game.buildWord(event)"
+            onmousemove="Game.buildingWord(event)"
+            onmouseup="Game.submitWord(event)"
           >
           </div>
 		   	 	<div
             style="background-color:ghostwhite"
             id="cube8"
             class="dice"
-            onmousedown="g.buildWord(event)"
-            onmousemove="g.buildingWord(event)"
-            onmouseup="g.submitWord(event)"
+            onmousedown="Game.buildWord(event)"
+            onmousemove="Game.buildingWord(event)"
+            onmouseup="Game.submitWord(event)"
           >
           </div>
 		   	 	<div
             style="background-color:ghostwhite"
             id="cube9"
             class="dice"
-            onmousedown="g.buildWord(event)"
-            onmousemove="g.buildingWord(event)"
-            onmouseup="g.submitWord(event)"
+            onmousedown="Game.buildWord(event)"
+            onmousemove="Game.buildingWord(event)"
+            onmouseup="Game.submitWord(event)"
           >
           </div>
 		   	 	<div
             style="background-color:ghostwhite"
             id="cube10"
             class="dice"
-            onmousedown="g.buildWord(event)"
-            onmousemove="g.buildingWord(event)"
-            onmouseup="g.submitWord(event)"
+            onmousedown="Game.buildWord(event)"
+            onmousemove="Game.buildingWord(event)"
+            onmouseup="Game.submitWord(event)"
           >
           </div>
 		   	 	<div
             style="background-color:ghostwhite"
             id="cube11"
             class="dice"
-            onmousedown="g.buildWord(event)"
-            onmousemove="g.buildingWord(event)"
-            onmouseup="g.submitWord(event)"
+            onmousedown="Game.buildWord(event)"
+            onmousemove="Game.buildingWord(event)"
+            onmouseup="Game.submitWord(event)"
           >
           </div>
 		   	 	<div
             style="background-color:ghostwhite"
             id="cube12"
             class="dice"
-            onmousedown="g.buildWord(event)"
-            onmousemove="g.buildingWord(event)"
-            onmouseup="g.submitWord(event)"
+            onmousedown="Game.buildWord(event)"
+            onmousemove="Game.buildingWord(event)"
+            onmouseup="Game.submitWord(event)"
           >
           </div>
 		   	 	<div
             style="background-color:ghostwhite"
             id="cube13"
             class="dice"
-            onmousedown="g.buildWord(event)"
-            onmousemove="g.buildingWord(event)"
-            onmouseup="g.submitWord(event)"
+            onmousedown="Game.buildWord(event)"
+            onmousemove="Game.buildingWord(event)"
+            onmouseup="Game.submitWord(event)"
           >
           </div>
 		   	 	<div
             style="background-color:ghostwhite"
             id="cube14"
             class="dice"
-            onmousedown="g.buildWord(event)"
-            onmousemove="g.buildingWord(event)"
-            onmouseup="g.submitWord(event)"
+            onmousedown="Game.buildWord(event)"
+            onmousemove="Game.buildingWord(event)"
+            onmouseup="Game.submitWord(event)"
           >
           </div>
 		   	 	<div
             style="background-color:ghostwhite"
             id="cube15"
             class="dice"
-            onmousedown="g.buildWord(event)"
-            onmousemove="g.buildingWord(event)"
-            onmouseup="g.submitWord(event)"
+            onmousedown="Game.buildWord(event)"
+            onmousemove="Game.buildingWord(event)"
+            onmouseup="Game.submitWord(event)"
           >
           </div>
 		   	 	<div
             style="background-color:ghostwhite"
             id="cube16"
             class="dice"
-            onmousedown="g.buildWord(event)"
-            onmousemove="g.buildingWord(event)"
-            onmouseup="g.submitWord(event)"
+            onmousedown="Game.buildWord(event)"
+            onmousemove="Game.buildingWord(event)"
+            onmouseup="Game.submitWord(event)"
           >
           </div>
 		   	</div>
