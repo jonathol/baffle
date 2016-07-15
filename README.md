@@ -23,7 +23,7 @@ To create a button that looks 3D, I gave it a box shadow.
 ![image of button][button]
 [button]: https://res.cloudinary.com/jonathol/image/upload/v1468556023/button_e0v2zu.png
 
-When a user hovers over a button, I remove the shadow and shrink the size of the element while increasing the border by 1px.
+When a I hover over a button, I remove the shadow and shrink the size of the element while increasing the border by 1px.
 
 ![image of button hover][button_hover]
 [button_hover]: https://res.cloudinary.com/jonathol/image/upload/v1468556023/button_hover_khymny.png
