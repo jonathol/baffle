@@ -113,7 +113,7 @@ body {
 
 .instruction-screen {
   width: 350px;
-  height: 440px;
+  height: 350px;
   background: #606060;
   color: ghostwhite;
   position: fixed;
@@ -137,9 +137,14 @@ body {
   text-align: center;
 }
 
+.bottom {
+  margin-top: 10px;
+}
+
 .instruction-list-container {
   margin: 0 15px;
 }
+
 
 .instruction-list-container > li {
   margin-bottom: 10px
