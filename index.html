@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Baffle</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Orbitron:400,500,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./stylesheets/baffle.css" type="text/css"/>
+
+	<script src="./js/baffle.js"type="text/javascript"></script>
+
+</head>
+<body>
+	<div id="wrapper" class="wrapper">
+		<header class="head-container">
+		  <h1 class="head">Baffle</h1>
+			<h2 class="head-sub">Inspired by Hasbro's Boggle</h2>
+	  </header>
+  	<div id="maincontentcontainer" class="main-content-container">
+			<div class="menu">
+	   		<h2 class="menu-title">Time Left: </h2>
+	   		<div id="countdownTimer" class="menu-time">-:--</div>
+	   		<button onclick="g.pause()" class="menu-button">
+          Pause
+        </button>
+				<button onclick="g.shuffleBaffleGrid()" class="menu-button" >
+					Restart
+				</button>
+				<button onclick="g.rules()" class="menu-button" >
+					Rules
+				</button>
+  	  </div>
+	   	<div>
+				<div id="instruction_overlay" class="instruction-overlay">
+					<div id="instruction_screen" class="instruction-screen">
+						<h2 class="instruction-title">Click and drag to make a word</h2>
+						<h2 class="instruction-title">You have 3 minutes to find as many words as you can according to the following rules:</h2>
+						<ol class="instruction-list-container">
+							<li>Letters must be adjacent (horizontally, vertically, or diagonally)</li>
+							<li>Words must contain at least three letters</li>
+							<li>No letter cube may be used more than once within a single word</li>
+						</ol>
+						<button onclick="g.shuffleBaffleGrid()" class="start" >
+		          Start!
+		        </button>
+					</div>
+					<div id="rules_screen" class="rules-screen">
+						<h2 class="instruction-title">Click and drag to make a word</h2>
+						<h2 class="instruction-title">You have 3 minutes to find as many words as you can according to the following rules:</h2>
+						<ol class="instruction-list-container">
+							<li>Letters must be adjacent (horizontally, vertically, or diagonally)</li>
+							<li>Words must contain at least three letters</li>
+							<li>No letter cube may be used more than once within a single word</li>
+						</ol>
+						<button onclick="g.rules()" class="start" >
+		          Continue
+		        </button>
+					</div>
+				</div>
+	   		<div id="score_overlay" class="score-overlay">
+					<div id="score_screen" class="score-screen">
+            <h2 class="score-title">Game Over!</h2>
+						<h3 class="score-display">Score: <span id="score">0</span></h3>
+						<span id="endMessage" class="score-message"></span>
+						<br><br>
+						<button onclick="g.playAgain()" class="score-button">
+              Play Again!
+            </button>
+					</div>
+					<div id="pause_screen" class="pause-screen">
+            <h2 class="pause-screen-title">Game Paused!</h2>
+						<h3 class="pause-screen-time">Time Left: <span id="time"></span></h3>
+						<button onclick="g.pause()" class="pause-screen-button">
+              Unpause
+            </button>
+					</div>
+				</div>
+	   		<div
+          id="baffleGrid"
+          class="board"
+          onmouseleave="g.clearBoard()"
+          onmouseup="g.submitWord(event)"
+        >
+		   	 	<div
+            style="background-color:ghostwhite"
+            id="cube1"
+            class="dice"
+            onmousedown="g.buildWord(event)"
+            onmousemove="g.buildingWord(event)"
+            onmouseup="g.submitWord(event)"
+          >
+          </div>
+		   	 	<div
+            style="background-color:ghostwhite"
+            id="cube2"
+            class="dice"
+            onmousedown="g.buildWord(event)"
+            onmousemove="g.buildingWord(event)"
+            onmouseup="g.submitWord(event)"
+          >
+          </div>
+		   	 	<div
+            style="background-color:ghostwhite"
+            id="cube3"
+            class="dice"
+            onmousedown="g.buildWord(event)"
+            onmousemove="g.buildingWord(event)"
+            onmouseup="g.submitWord(event)"
+          >
+          </div>
+		   	 	<div
+            style="background-color:ghostwhite"
+            id="cube4"
+            class="dice"
+            onmousedown="g.buildWord(event)"
+            onmousemove="g.buildingWord(event)"
+            onmouseup="g.submitWord(event)"
+          >
+          </div>
+		   	 	<div
+            style="background-color:ghostwhite"
+            id="cube5"
+            class="dice"
+            onmousedown="g.buildWord(event)"
+            onmousemove="g.buildingWord(event)"
+            onmouseup="g.submitWord(event)"
+          >
+          </div>
+		   	 	<div
+            style="background-color:ghostwhite"
+            id="cube6"
+            class="dice"
+            onmousedown="g.buildWord(event)"
+            onmousemove="g.buildingWord(event)"
+            onmouseup="g.submitWord(event)"
+          >
+          </div>
+		   	 	<div
+            style="background-color:ghostwhite"
+            id="cube7"
+            class="dice"
+            onmousedown="g.buildWord(event)"
+            onmousemove="g.buildingWord(event)"
+            onmouseup="g.submitWord(event)"
+          >
+          </div>
+		   	 	<div
+            style="background-color:ghostwhite"
+            id="cube8"
+            class="dice"
+            onmousedown="g.buildWord(event)"
+            onmousemove="g.buildingWord(event)"
+            onmouseup="g.submitWord(event)"
+          >
+          </div>
+		   	 	<div
+            style="background-color:ghostwhite"
+            id="cube9"
+            class="dice"
+            onmousedown="g.buildWord(event)"
+            onmousemove="g.buildingWord(event)"
+            onmouseup="g.submitWord(event)"
+          >
+          </div>
+		   	 	<div
+            style="background-color:ghostwhite"
+            id="cube10"
+            class="dice"
+            onmousedown="g.buildWord(event)"
+            onmousemove="g.buildingWord(event)"
+            onmouseup="g.submitWord(event)"
+          >
+          </div>
+		   	 	<div
+            style="background-color:ghostwhite"
+            id="cube11"
+            class="dice"
+            onmousedown="g.buildWord(event)"
+            onmousemove="g.buildingWord(event)"
+            onmouseup="g.submitWord(event)"
+          >
+          </div>
+		   	 	<div
+            style="background-color:ghostwhite"
+            id="cube12"
+            class="dice"
+            onmousedown="g.buildWord(event)"
+            onmousemove="g.buildingWord(event)"
+            onmouseup="g.submitWord(event)"
+          >
+          </div>
+		   	 	<div
+            style="background-color:ghostwhite"
+            id="cube13"
+            class="dice"
+            onmousedown="g.buildWord(event)"
+            onmousemove="g.buildingWord(event)"
+            onmouseup="g.submitWord(event)"
+          >
+          </div>
+		   	 	<div
+            style="background-color:ghostwhite"
+            id="cube14"
+            class="dice"
+            onmousedown="g.buildWord(event)"
+            onmousemove="g.buildingWord(event)"
+            onmouseup="g.submitWord(event)"
+          >
+          </div>
+		   	 	<div
+            style="background-color:ghostwhite"
+            id="cube15"
+            class="dice"
+            onmousedown="g.buildWord(event)"
+            onmousemove="g.buildingWord(event)"
+            onmouseup="g.submitWord(event)"
+          >
+          </div>
+		   	 	<div
+            style="background-color:ghostwhite"
+            id="cube16"
+            class="dice"
+            onmousedown="g.buildWord(event)"
+            onmousemove="g.buildingWord(event)"
+            onmouseup="g.submitWord(event)"
+          >
+          </div>
+		   	</div>
+	   	</div>
+			<div class="current-score">
+   		  <h2 class="current-score-title">Score: <span id="currentScore"></span></h2>
+   			<h3 class="wordlist">Word List:</h3>
+				<br>
+				<div id="wordlist_container" class="current-score-list">
+					<table id="wordList" ></table>
+				</div>
+   		</div>
+  	</div>
+  </div>
+</body>
